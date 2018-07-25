@@ -24,12 +24,31 @@ import React from 'react';
 //   }
 // }
 
-export default function Forms(props) {
+// export default function Forms(props) {
+//   return (
+//     <form onSubmit={e=> props.onSubmit(e)}>
+//       <label htmlFor='textBox'> Temperature </label>
+//       <input type='text' id='textBox' className='textInput' onChange={ e => props.onChangeHolderNum(e.target.value)} />
+//       <button type='submit'>Submit</button>
+//     </form>
+//   );
+// }
+
+export default class Forms extends React.Component {
+    onSubmit(event){
+      event.preventDefault();
+      const value = this.inputText.value;
+      this.props.handleConversion(value);
+  }
+  render() {
+
   return (
-    <form onSubmit={e=> props.onSubmit(e)}>
+    <form onSubmit={(e) => this.onSubmit(e)}>
       <label htmlFor='textBox'> Temperature </label>
-      <input type='text' id='textBox' className='textInput' onChange={ e => props.onChangeHolderNum(e.target.value)} />
+      <input ref={ input => this.inputText = input} type='text' id='textBox' className='textInput' />
       <button type='submit'>Submit</button>
     </form>
   );
+  }
 }
+

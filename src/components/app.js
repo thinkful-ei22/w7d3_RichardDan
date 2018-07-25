@@ -30,8 +30,8 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <Forms onSubmit={event => this.handleOnSubmit(event)} onChangeHolderNum={value => this.handleHolderNum(value)}/>
-        {/* <Forms handleConversion={number => this.setState({ number })}/> */}
+        {/* <Forms onSubmit={event => this.handleOnSubmit(event)} onChangeHolderNum={value => this.handleHolderNum(value)}/> */}
+        <Forms handleConversion={number => this.setState({ number })}/>
         <Response temp={convertCelcius(this.state.number)}/>
       </div>
     );
