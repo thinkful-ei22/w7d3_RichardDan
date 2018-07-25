@@ -35,20 +35,20 @@ import React from 'react';
 // }
 
 export default class Forms extends React.Component {
-    onSubmit(event){
-      event.preventDefault();
-      const value = this.inputText.value;
-      this.props.handleConversion(value);
+  onSubmit(event){
+    event.preventDefault();
+    const value = this.inputText.value;
+    this.props.handleConversion(value);
   }
   render() {
 
-  return (
-    <form onSubmit={(e) => this.onSubmit(e)}>
-      <label htmlFor='textBox'> Temperature </label>
-      <input ref={ input => this.inputText = input} type='text' id='textBox' className='textInput' />
-      <button type='submit'>Submit</button>
-    </form>
-  );
+    return (
+      <form onSubmit={(e) => this.onSubmit(e)}>
+        <label htmlFor='textBox'> Temperature </label>
+        <input ref={ input => this.inputText = input} type='text' id='textBox' className='textInput' />
+        <button type='submit'>Submit</button>
+      </form>
+    );
   }
 }
 

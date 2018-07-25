@@ -1,15 +1,16 @@
 import React from 'react';
 import FormA from './formA';
 import FormB from './formB';
-// import { convertC, convertF } from './conversion-formula';
+import { convertC, convertF } from './conversion-formula';
+import './app.css';
 
-function convertC(num) {
-  return num * 1.8 + 32;
-}
+// function convertC(num) {
+//   return num * 1.8 + 32;
+// }
 
-function convertF(num) {
-  return (num - 32) * 0.5556;
-}
+// function convertF(num) {
+//   return (num - 32) * 0.5556;
+// }
 
 export default class App extends React.Component {
   constructor(props) {
@@ -18,7 +19,7 @@ export default class App extends React.Component {
     this.state = {
       c : 20,
       f: 68
-    }
+    };
   }
 
   handleConvertC(num){
@@ -31,9 +32,11 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <FormA handleC={c => this.handleConvertC(c)} c={this.state.c}/>
-        <FormB handleF={f => this.handleConvertF(f)} f={this.state.f}/>
+      <div className='app'>
+        <div className='holder'>
+          <FormA handleC={c => this.handleConvertC(c)} c={this.state.c}/>
+          <FormB handleF={f => this.handleConvertF(f)} f={this.state.f}/>
+        </div>
       </div>
     );
   }
