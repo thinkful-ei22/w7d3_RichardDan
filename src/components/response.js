@@ -1,7 +1,8 @@
 import React from 'react';
 
-export default function Response() {
+export default function Response(props) {
   return (
-    <div> My response </div>
+    <div> Fahreneit: { props.temp } </div>
   );
 }
+

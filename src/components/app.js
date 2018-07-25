@@ -1,6 +1,7 @@
 import React from 'react';
 import Forms from './forms';
 import Response from './response';
+import convertCelcius from './conversion-formula';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -14,8 +15,11 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <Forms />
-        <Response />
+        <Forms temp={this.state.number} handleConversion={number => {
+
+          this.setState({ number })}
+          }/>
+        <Response temp={convertCelcius(this.state.number)}/>
       </div>
     );
   }
