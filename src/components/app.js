@@ -1,7 +1,7 @@
 import React from 'react';
 import Forms from './forms';
 import Response from './response';
-import convertCelcius from './conversion-formula';
+import {convertC} from './conversion-formula';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -32,7 +32,7 @@ export default class App extends React.Component {
       <div>
         {/* <Forms onSubmit={event => this.handleOnSubmit(event)} onChangeHolderNum={value => this.handleHolderNum(value)}/> */}
         <Forms handleConversion={number => this.setState({ number })}/>
-        <Response temp={convertCelcius(this.state.number)}/>
+        <Response temp={convertC(this.state.number)}/>
       </div>
     );
   }

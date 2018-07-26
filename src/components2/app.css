@@ -1,5 +1,6 @@
 .app .holder form{
   display: inline-block;
+  
 }
 
 .app .holder {
@@ -15,10 +16,10 @@
   margin: 50px auto;
 }
 
-.app .holder form .textInput {
+.app .holder form .textInput, .app .holder form select {
   height: 30px;
   margin: 10px;
-  width: 300px;
-  font-size: 25px;
+  min-width: 200px;
+  font-size: 20px;
   text-align: center;
 }
